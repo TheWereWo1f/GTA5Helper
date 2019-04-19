@@ -1,0 +1,84 @@
+<?php
+require_once('template/header.phtml');
+?>
+<div class="content">
+    <div id="empty">
+    </div>
+    <div id="container">
+        <div id="container-background">
+            <div id="empty-space">
+            </div>
+            <div id="buttons-background">
+                <div id="buttons">
+                    <button class="btn active" id="Materials">Материалы</button> <button class="btn" id="Authors">Авторы</button>
+                </div>
+            </div>
+            <div id="main-info-background">
+                <div id="main-info">
+                    <div class="hide" id="hidden-materials">
+                        <p id="hidden-text">
+                            На сайте расположены в удобном порядке порядке материалы помогающие при проектировке РП сервера.
+                            Представлены следующие списки:
+                            <br>
+                            <br>
+                            Список машин - Полный список существующих машин в ГТА с их описаниями, моделями и скриншотами.
+                            <br>
+                            <br>
+                            Список оружий - Представляет из себя подробный список и путеводитель по каждому оружию с
+                            удобной фильтрацией и скриншотами.
+                            <br>
+                            <br>
+                            Список интерьеров - Список открывающий перед вами многие доступные интерьеры в ГТА. И в
+                            отличии от мода при помощи которого это всё открывается, вам не придётся
+                            долго блуждать по всей карте и смотреть их в ручную, в место этого вы сможете насладится
+                            множеством скриншотов и видео прямо на сайте.
+                            <br>
+                            <br>
+                            В дальнейшем списки могут дополнятся, так, что не так, что да, это самое. Ну вы поняли.
+                            <br>
+                        </p>
+                    </div>
+                    <div class="hide" id="hidden-authors">
+                        <p id="hidden-text">
+                            Над сайтом работала команда Butterfly Squad. Все материалы были взяты из свободных источников
+                            в интернете. Для помощи в развитии проекта заходите на наш Дискорд канал и предлагайте свои
+                            идеи или навыки для улучшения проекта.
+                            <br>
+                            <br>
+                            Всем спасибо, спасибо всем!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script type="text/javascript">
+        var header = document.getElementById("buttons");
+        var btns = header.getElementsByClassName("btn");
+        var materials = document.getElementById("Materials");
+        var authors = document.getElementById("Authors");
+        var hidden_mats = document.getElementById("hidden-materials");
+        var authors_mats = document.getElementById("hidden-authors");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+                //console.log(current[0]);
+                if (current[0] === materials){
+                   hidden_mats.style.display = ("block");
+                   authors_mats.style.display = ("none");
+                }
+                if (current[0] === authors){
+                    authors_mats.style.display = ("block");
+                    hidden_mats.style.display = ("none");
+                }
+                else {
+                    return false;
+                }
+            });
+        }
+    </script>
+<?php
+require_once('template/footer.phtml');

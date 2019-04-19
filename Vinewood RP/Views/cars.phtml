@@ -1,0 +1,100 @@
+<?php
+require_once("template/header.phtml");
+?>
+<div class="content">
+    <div id="empty">
+    </div>
+    <div id="container">
+        <div id="cars-container-background">
+            <div id="empty-space">
+            </div>
+            <div id="left-container">
+                <button class="btn1" id="all">все</button>
+                <button class="btn1" id="all">комерч.</button>
+                <button class="btn1" id="all">парные</button>
+                <button class="btn1" id="all">служеб.</button>
+                <button class="btn1" id="all">стройка</button>
+                <button class="btn1" id="all">мото</button>
+                <button class="btn1" id="all">внедор.</button>
+                <button class="btn1" id="all">внедор.2</button>
+                <button class="btn1" id="all">сервисы</button>
+                <button class="btn1" id="all">спорт кл.</button>
+                <button class="btn1" id="all">трейлер</button>
+                <button class="btn1" id="all">другое</button>
+            </div>
+            <div id="right-buttons">
+                <button class="btn1" id="all">лодки</button>
+                <button class="btn1" id="all">компакт.</button>
+                <button class="btn1" id="all">велики</button>
+                <button class="btn1" id="all">вертол.</button>
+                <button class="btn1" id="all">военные</button>
+                <button class="btn1" id="all">мускул</button>
+                <button class="btn1" id="all">самолеты</button>
+                <button class="btn1" id="all">седаны</button>
+                <button class="btn1" id="all">спорт</button>
+                <button class="btn1" id="all">супер</button>
+                <button class="btn1" id="all">поезд</button>
+                <button class="btn1" id="all">ваны</button>
+            </div>
+            <div id="left-pointer">
+                <a class="prev" onclick="plusSlides(-1)">
+                <img id="left-arrow" src="../images/Site/LeftArrow.png" alt="left-arrow">
+                </a>
+            </div>
+            <div id="right-container">
+                <div class="row" id="main-images">
+                    <div class="column" id="image1">
+                    </div>
+                    <div class="column" id="image2">
+                    </div>
+                    <div class="column" id="image3">
+                    </div>
+                    <div class="column" id="image4">
+                    </div>
+                    <div class="column" id="image5">
+                    </div>
+                    <div class="column" id="image6">
+                    </div>
+                    <div class="column" id="image7">
+                    </div>
+                    <div class="column" id="image8">
+                    </div>
+                    <div class="column" id="image9">
+                    </div>
+                </div>
+                <div id="right-pointer">
+                    <a class="next" onclick="plusSlides(1)">
+                    <img id="right-arrow" src="../images/Site/RightArrow.png" alt="right-arrow">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+</script>
+<?php
+require_once("template/footer.phtml");
+?>
